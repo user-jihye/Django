@@ -15,10 +15,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from libraries import views
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
-    path('', views.index),
+    path('admin/', admin.site.urls),
+    # 홈 url 처리
+    path('', views.home, name='home'),
+    # libraries/xxx/ >> libraries app 에 추가로 등록
+    path('libraries/', include('libraries.urls')),
 ]

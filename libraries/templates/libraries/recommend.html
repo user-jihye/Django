@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>나는 추천도서</h1>
+
+    <hr>
+    {% comment %} {{ books }} {% endcomment %}
+    {% for book in books %}
+        <p>제목 : {{ book.title }}</p>
+        <p>저자 : {{ book.author }}</p>
+        <hr>
+    {% endfor %}
+    
+{% endblock content %}
